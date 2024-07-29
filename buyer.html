@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html > 
+<head> 
+    <title>Registration Form</title> 
+    <link rel="stylesheet" href="formvalid.css"> 
+</head> 
+<script type=text/javascript>  
+    function validate() 
+    { 
+        var username=document.regform.Name; 
+        var pswrd=document.regform.pw.value; 
+        var breed=document.regform.brd.value; 
+        var mailid=document.regform.mail.value; 
+        var phn=document.regform.phone.value; 
+        if(username.value==""){ 
+            alert("Enter the Username"); 
+        } 
+        if(pswrd.length>6){ 
+            alert("Password must be of 6 characters!"); 
+        } 
+        if(phn.length>10){ 
+            alert("Enter valid Contact Number!"); 
+        } 
+        if(mailid==""){ 
+            alert("Enter your MailID!"); 
+        } 
+        var x=0; 
+        var i; 
+        for(i=0;i<mailid.length;i++){ 
+            if((mailid.charAt(i)=="@")){ 
+                let x=1; 
+                break; 
+            } 
+        } 
+        if(x==0){ 
+            alert("Enter valid mailID"); 
+        } 
+        function submission(){ 
+            confirm("Form Submitted"); 
+    } 
+    return submission(); 
+    } 
+</script> 
+<body> 
+    <form name="regform" onsubmit="validate()"> 
+        <div> 
+            <h1 class="reg">REGISTER TO BUY</h1> 
+            <p> 
+                <h3><label>Name <input name="Name" type="text" class="ip"/></label></h3>  
+            </p> 
+            <p> 
+                <h3><label>Password <input name="pw" type="password" class="ip"/></label></h3>  
+            </p> 
+            <p> 
+                <h3><label>Contact <input name="phone" type="text" class="ip"/></label></h3>  
+            </p>  
+            <h3> 
+                <label>Email <input type="text" name="mail" class="ip"/></label> 
+            </h3> 
+            <p> 
+                <h3><label>Place <input name="text" name="plc" class="ip"/></label></h3>                 
+            </p> 
+            <P> 
+            <h3><label>Buying date <input type="date" name="buydate" class="ip"/></label></h3> 
+            <h3><label>Requirement <input name="ride" class="ip"/></label></h3> 
+            <h3><label>Purpose <input name="ride" class="ip"/></label></h3> 
+            </P> 
+            <H3>  
+            <label>Select Breed <select class="sel" name="brd"> 
+                    <option class="op">Breed</option> 
+                    <option class="op">Marwar</option> 
+                    <option class="op">Gumate</option> 
+                    <option class="op">Nukraw</option> 
+                    <option class="op">Blacky</option> 
+                </select> 
+            </label> 
+            </H3> 
+            <h3>Gender of horse: 
+                <label><input type="radio" name="gender" value="male"/> Male</label> 
+                <label><input type="radio" name="gender" value="female"/> Female</label> 
+            </h3> 
+            <p> 
+                <button ctype="submit" class="sub" onclick="submission()">SUBMIT</button> 
+            </p> 
+    </form> 
+</div> 
+</body> 
+</html>
